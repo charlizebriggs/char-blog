@@ -1,63 +1,154 @@
+/* General Reset */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
 }
 
+/* App Grid Layout */
 .App {
   display: grid;
   grid-template-rows: min-content auto;
   grid-template-columns: 250px auto;
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  align-items: center;
+  background-color: #333;
   color: white;
   grid-column: 1 / span 2;
-  padding: 10px 5px;
+  padding: 15px 20px;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Styling */
 form {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 form input,
 form textarea {
-  margin-bottom: 10px;
-  width: 300px;
-}
-
-nav,
-article {
-  height: 100%;
+  margin-bottom: 15px;
   padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
+form button {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* Sidebar Navigation */
 nav {
   background-color: #dee9ff;
+  padding: 20px;
+  height: 100%;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+nav p {
+  margin: 10px 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 nav p:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  background-color: #c2d4ff;
 }
 
-article .date {
-  font-style: italic;
+/* Article Content */
+article {
+  padding: 30px;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 }
 
-article .body {
+/* Title and Body Section for Blog Content */
+.article-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.2;
+}
+
+.article-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
   white-space: break-spaces;
+  color: #444;
 }
 
+/* Article Date Styling */
+.date {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Error Message Styling */
 .error {
-  background-color: red;
-  color: gold;
-  padding: 5px;
+  background-color: #ffdddd;
+  color: #b80000;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 15px 0;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ff8a8a;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .App {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 15px;
+  }
+
+  .article-title {
+    font-size: 1.8rem;
+  }
 }
